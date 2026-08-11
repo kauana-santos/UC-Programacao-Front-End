@@ -12,12 +12,12 @@
 
 
 function alteraFundo(){
-    let fundo = document.querySelector("#body")
+    let fundo = document.querySelector("body")
     fundo.style.backgroundColor = "#ffff"
 }
 
 function alteraTitulos(fonte){
-    let titulos = document.querySelectorAll("h2")
+    let titulos = document.querySelectorAll("h1, h2")
 
     titulos.forEach(titulo => {
         titulo.style.fontFamily = fonte;
@@ -56,7 +56,6 @@ function inserirEmoji(emoji) {
          primeiroParagrafo.textContent = emoji + " " + primeiroParagrafo.textContent;
     });
 }
-
 
 alteraFundo()
 alteraTitulos("Arial");
