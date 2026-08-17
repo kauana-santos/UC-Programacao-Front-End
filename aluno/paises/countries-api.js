@@ -12404,21 +12404,50 @@ const countries = [
 		"historico": "O Zimbábue é um país sem litoral da África meridional. Sua capital é Harare (anteriormente chamada Salisbury).O Reino Unido anexou a Rodésia do Sul da antiga Companhia Britânica da África do Sul em 1923. Uma constituição em 1961 foi formulada para favorecer os brancos no poder. Em 1965, o governo declarou unilateralmente sua independência, mas o Reino Unido não reconheceu o ato e exigiu direitos de voto mais completos para a maioria negra africana no país (então chamada Rodésia). As sanções da ONU e uma rebelião guerrilheira finalmente levaram a eleições livres em 1979 e à independência (como o Zimbábue) em 1980.Fontes: https://www.britannica.com/place/Zimbabwe https://www.cia.gov/library/publications/the-world-factbook/geos/zi.html"
 	}
 ];
+const continentes = ["América", "África"];
+
 let secao = document.querySelector(".countries");
 
-const paises = countries.map(pais => {
-    const sigla = pais.id["ISO-3166-1-ALPHA-2"].toLowerCase();
+// const paises = countries
+//     .filter(pais => continentes.includes(pais.localizacao.regiao.nome))
+//     .map(pais => {
+//         const sigla = pais.id["ISO-3166-1-ALPHA-2"].toLowerCase();
 
+//         return `
+//             <div class="fundo">
+//                 <img src="https://flagcdn.com/w80/${sigla}.png" 
+//                      alt="Bandeira de ${pais.nome.abreviado}">
+
+//                 <h3>${pais.nome.abreviado}</h3>
+//                 <p>Sigla: ${sigla.toUpperCase()}</p>
+//                 <p>Região: ${pais.localizacao.regiao.nome}</p>
+//                 <p>Capital: ${pais.governo.capital.nome}</p>
+//             </div>
+//         `;
+//     })
+//     .join("");
+
+// secao.innerHTML = paises;
+
+let dolar = ["Dólar dos Estados Unidos"]
+ 
+const paises = countries
+    .filter(pais => pais['unidades-monetarias']?.some(moeda => dolar.includes(moeda.nome)))
+    .map(pais => {
+    const sigla = pais.id["ISO-3166-1-ALPHA-2"].toLowerCase();
+ 
     return `
         <div class="fundo">
             <img src="https://flagcdn.com/w80/${sigla}.png" alt="Bandeira de ${pais.nome.abreviado}">
-
+ 
             <h3>${pais.nome.abreviado}</h3>
             <p>Sigla: ${sigla.toUpperCase()}</p>
             <p>Região: ${pais.localizacao.regiao.nome}</p>
             <p>Capital: ${pais.governo.capital.nome}</p>
+            <p>Moeda: ${pais["unidades-monetarias"][0].nome}</p>
         </div>
     `;
 }).join("");
-
+ 
 secao.innerHTML = paises;
+ 
