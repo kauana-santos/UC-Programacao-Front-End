@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Balão</title>
+</head>
+<body>
+	<p>🎈</p>
+
+	
+	<script>
+		let balao = document.querySelector('p');
+
+		let tamanho = 100;
+
+		
+		document.addEventListener("keydown", (event) => {
+
+
+ 			if (event.key === "ArrowUp") {
+                tamanho = tamanho * 1.10;
+                balao.style.fontSize = tamanho + "px";
+				console.log(tamanho)
+
+				if (tamanho > 130){
+					balao.textContent = "💥"
+
+				} 
+
+            } 
+			
+			if (event.key === "ArrowDown") {
+                tamanho = tamanho * 0.90;
+                balao.style.fontSize = tamanho + "px";
+            }
+
+            
+		})
+	</script>
+</body>
+</html>
