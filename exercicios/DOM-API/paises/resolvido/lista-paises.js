@@ -1,7 +1,8 @@
-<<<<<<< HEAD
-console.dir(countries);
-=======
+console.table(countries);
+
 const section = document.querySelector('.countries');
+
+console.time('For of');
 
 for(pais of countries) {
     let div = document.createElement('div');
@@ -11,4 +12,5 @@ for(pais of countries) {
     div.appendChild(h3);
     section.appendChild(div);
 }
->>>>>>> dd8e178d9f4c2cec1a956f187ed659995c6c649e
+
+console.timeEnd('For of');

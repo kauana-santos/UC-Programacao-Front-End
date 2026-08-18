@@ -24,3 +24,22 @@ Agora iremos utilizar um array de países com objetos com mais detalhes, a parti
 
 Além disso, utilize a FlagCDN para exibir a bandeira dos países: [https://flagcdn.com/](https://flagcdn.com/)
 
+<<<<<<< HEAD
+=======
+## 4. Filtro de continentes
+
+Adicione um array no topo do seu script com os valores `["América", "África"]`. Exiba apenas os países destes continentes. Conseguindo, altere os continentes na lista para validar que está funcionando adequadamente.
+
+## 5. Filtro de moeda
+
+Filtro a exibição de países para exibir apenas os países cujo a moeda seja o `Dólar dos Estados Unidos`.
+
+## 6. Remoção de países
+
+Crie uma função que recebe como parâmetro o nome (ou sigla) de um ou mais países. A função deve remover os países passado da exibição na página. Invoque a função do console para testar o seu funcionamento.
+
+## 7. Estilização
+
+Estile a página para exibir os cartões de países formatados (cor de fundo, fontes, posicionamento, margens, padding, etc.).
+Estilize o cartão de cada país com uma cor diferente por continente.
+>>>>>>> dd8e178d9f4c2cec1a956f187ed659995c6c649e
